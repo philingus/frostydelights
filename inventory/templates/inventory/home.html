@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frosty Delights</title>
+</head>
+<body>
+    <h1>Frosty Delights Inventory</h1>
+    <a href="{% url 'add_ice_cream' %}">Add New</a>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }} - {{ item.flavor }} - Quantity: {{ item.quantity }}</li>
+        {% empty %}
+            <li>No inventory yet!</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
